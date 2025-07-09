@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FRP Clear Pro - Remoção de Conta Samsung</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 30px;
+    }
+    h1 {
+      color: #111;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    .price {
+      color: #28a745;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .discount {
+      color: red;
+      font-size: 20px;
+      margin: 10px 0;
+    }
+    .timer {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    ul {
+      margin: 20px 0;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .pix {
+      background-color: #e2f7e2;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    .btn-whatsapp {
+      display: inline-block;
+      background-color: #25d366;
+      color: white;
+      padding: 15px 25px;
+      font-size: 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+    .btn-whatsapp:hover {
+      background-color: #1ebe57;
+    }
+  </style>
+  <script>
+    let countdown = 5 * 60;
+    function startTimer() {
+      const timerDisplay = document.getElementById("timer");
+      const interval = setInterval(() => {
+        const minutes = Math.floor(countdown / 60);
+        const seconds = countdown % 60;
+        timerDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        if (--countdown < 0) {
+          clearInterval(interval);
+          document.querySelector(".discount").textContent = "Oferta expirada";
+        }
+      }, 1000);
+    }
+    window.onload = startTimer;
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>FRP Clear Pro</h1>
+    <p><strong>Remova contas Google (FRP) de aparelhos Samsung com facilidade, segurança e rapidez.</strong></p>
+
+    <p class="price">De R$129,90 por apenas <span style="color:red">R$29,90</span> no Pix!</p>
+    <p class="discount">Desconto exclusivo por tempo limitado</p>
+    <p class="timer">Tempo restante da oferta: <span id="timer">5:00</span></p>
+
+    <h3>Vantagens:</h3>
+    <ul>
+      <li>Remoção de conta Google (FRP) de modelos Samsung</li>
+      <li>Interface simples, ideal para iniciantes</li>
+      <li>Ativa em segundos</li>
+      <li>Suporte via WhatsApp</li>
+    </ul>
+
+    <h3>Modelos Compatíveis (exemplos):</h3>
+    <ul>
+      <li>Samsung Galaxy A10, A20, A30, A50, A70, A80</li>
+      <li>Samsung Galaxy J2, J5, J6, J7, J8</li>
+      <li>Samsung Galaxy S8, S9, S10, S20</li>
+      <li>Samsung Galaxy M10, M20, M30</li>
+      <li>E muitos outros com Android 7 a 11</li>
+    </ul>
+
+    <div class="pix">
+      <p><strong>Chave Pix:</strong> <br> <code>10071455957</code> (Anderson Galvão - Nubank)</p>
+      <p>Valor com desconto: <strong>R$29,90</strong></p>
+    </div>
+
+    <a class="btn-whatsapp" href="https://wa.me/5541997284867?text=Oi%2C+acabei+de+fazer+o+Pix+de+R%24+29%2C90+para+o+FRP+Clear+Pro.+Segue+o+comprovante%3A" target="_blank">Enviei o comprovante via WhatsApp</a>
+  </div>
+</body>
+</html>
